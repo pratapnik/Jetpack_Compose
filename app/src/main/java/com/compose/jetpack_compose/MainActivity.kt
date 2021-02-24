@@ -1,6 +1,7 @@
 package com.compose.jetpack_compose
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             i++
         }
         return listOfTitles
+    }
+
+    fun showToast() {
+        Toast.makeText(applicationContext, "Nikhil", Toast.LENGTH_LONG).show()
     }
 }
 
