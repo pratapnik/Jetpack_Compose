@@ -29,8 +29,11 @@ import kotlin.random.Random
 fun NewsStory(listOfTitles: List<String>) {
     val image = painterResource(id = R.drawable.header)
 
-    MaterialTheme {
+    CustomTheme {
+
+
         Column(modifier = Modifier.padding(16.dp)) {
+
             val ringColor = remember {
                 randomColor()
             }
@@ -127,3 +130,31 @@ fun randomColor(): Color = Color(
     green = Random.nextInt(0, 255),
     blue = Random.nextInt(0, 255)
 )
+
+@Composable
+fun LayoutsCodelab() {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "LayoutsCodelab")
+                }
+            )
+        }
+    ) {
+            innerPadding ->
+        Text("Nikhil", Modifier.padding(innerPadding))
+    }
+
+
+}
+
+@Composable
+fun CustomTheme(content: @Composable () -> Unit) {
+    val primaryColor = Color(0xffae5d3c)
+    val secondaryColor = Color(0xff000000)
+    val colors = lightColors(primary = primaryColor, primaryVariant = primaryColor,
+        secondary = secondaryColor, secondaryVariant = secondaryColor,
+        surface = secondaryColor, onPrimary = primaryColor, onSecondary = secondaryColor)
+    MaterialTheme(colors = colors, content = content)
+}
