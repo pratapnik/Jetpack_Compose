@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Jetpack_Compose</string>
+    <string name="title_activity_constraint">ConstraintActivity</string>
 </resources>
